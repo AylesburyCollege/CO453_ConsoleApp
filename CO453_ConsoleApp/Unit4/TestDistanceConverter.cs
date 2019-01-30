@@ -40,5 +40,11 @@ namespace CO453_ConsoleApp.Unit4
             miles = DistanceConverter.FeetToMiles(feet);
             Console.WriteLine("The number of miles = " + miles.ToString("#.##"));
         }
+
+        public static void TestChoices()
+        {
+            string [] choices = new string [] {"Miles to Feet", "Feet to Miles", "Quit"};
+            UserLib.GetChoice(choices);
+        }
     }
 }

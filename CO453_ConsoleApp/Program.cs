@@ -13,7 +13,8 @@ namespace CO453_ConsoleApp
         static void Main(string[] args)
         {
 
-            TestBook.Test();
+            //TestBook.Test();
+            TestDistanceConverter.TestChoices();
 
             Console.ReadKey();
 
