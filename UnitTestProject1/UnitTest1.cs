@@ -7,8 +7,11 @@ namespace UnitTestProject1
     public class UnitTest1
     {
         [TestMethod]
+        [Owner("Derek")]
+        [TestCategory("Stubbed")]
         public void TestMethod1()
         {
+            Assert.Fail();
         }
     }
 }
