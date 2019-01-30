@@ -24,8 +24,8 @@ namespace CO453_ConsoleApp
         public void Archive()
         {
             // Task 4.1
-            TestDistanceConverter.TestMilesToFeet();
-            TestDistanceConverter.TestFeetToMiles();
+            //TestDistanceConverter.TestMilesToFeet();
+            //TestDistanceConverter.TestFeetToMiles();
         }
     }
 }

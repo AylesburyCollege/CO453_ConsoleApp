@@ -12,7 +12,7 @@ namespace CO453_ConsoleApp.Unit4
         MALE
     }
 
-    class Book
+    public class Book
     {
         public string Title { get; set; }
 

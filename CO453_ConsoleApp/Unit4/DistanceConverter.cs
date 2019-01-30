@@ -9,16 +9,16 @@ namespace CO453_ConsoleApp.Unit4
     /// <summary>
     /// This class will 
     /// </summary>
-    class DistanceConverter
+    public class DistanceConverter
     {
         public const double NO_FEET_PER_MILE = 1760 * 3;
 
-        public static double MilesToFeet(double miles)
+        public double MilesToFeet(double miles)
         {
             return miles * NO_FEET_PER_MILE;
         }
 
-        public static double FeetToMiles(double feet)
+        public double FeetToMiles(double feet)
         {
             return feet / NO_FEET_PER_MILE;
         }
