@@ -23,6 +23,5 @@ namespace CO453_ConsoleApp.Unit4
             return feet / NO_FEET_PER_MILE;
         }
 
-
     }
 }

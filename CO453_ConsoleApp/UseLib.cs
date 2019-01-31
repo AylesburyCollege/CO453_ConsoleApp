@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CO453_ConsoleApp
 {
@@ -34,6 +32,7 @@ namespace CO453_ConsoleApp
 
             Console.WriteLine();
             Console.Write(prompt);
+
             input = Console.ReadLine();
             mark = Convert.ToInt32(input);
 
@@ -52,6 +51,7 @@ namespace CO453_ConsoleApp
 
             Console.WriteLine();
             Console.Write(prompt);
+
             input = Console.ReadLine();
             amount = Convert.ToDecimal(input);
 
@@ -70,6 +70,7 @@ namespace CO453_ConsoleApp
 
             Console.WriteLine();
             Console.Write(prompt);
+
             input = Console.ReadLine();
             amount = Convert.ToDouble(input);
 
