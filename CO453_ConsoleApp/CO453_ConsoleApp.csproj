@@ -57,6 +57,8 @@
     <Compile Include="Unit4\TestBook.cs" />
     <Compile Include="Unit4\TestDistanceConverter.cs" />
     <Compile Include="Unit4\TestSomeClass.cs" />
+    <Compile Include="Unit5\Car.cs" />
+    <Compile Include="Unit5\Player.cs" />
     <Compile Include="UseLib.cs" />
   </ItemGroup>
   <ItemGroup>
