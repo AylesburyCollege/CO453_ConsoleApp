@@ -2,25 +2,32 @@
 
 namespace CO453_ConsoleApp
 {
+    public enum Players
+    {
+        COMPUTER,
+        PLAYER
+    }
+
     /// <summary>
     /// This class plays ...
     /// Author: 
-    /// Started: 
+    /// Started: 12/02/2019
     /// </summary>
     class Game
     {
         public const string SCISSORS = "SCISSORS";
-        public const string STONE = "PAPER";
-        public const string PAPER = "STONE";
+        public const string STONE = "STONE";
+        public const string PAPER = "PAPER";
 
-        string computerChoice;
-        string playerChoice;
-
-        Random randomGenerator;
+        private string computerChoice;
+        private string playerChoice;
+        private string playerName = "Derek";
+        private Random randomGenerator;
 
         static void Main()
         {
             Game myGame = new Game();  // create new Game object
+
             myGame.Play();             // call its play method
         }
 
@@ -31,7 +38,7 @@ namespace CO453_ConsoleApp
         /// </summary>
         public Game()
         {
-            randomGenerator = new Random();       // create new Random object
+            randomGenerator = new Random(); 
         }
 
         /// <summary>
@@ -47,7 +54,8 @@ namespace CO453_ConsoleApp
             GetPlayerChoice();
             GetComputerChoice();
 
-            DrawPlayerChoice();
+            DrawChoice(Players.PLAYER);
+            DrawChoice(Players.COMPUTER);
 
             ShowChoices();
             ShowResult();
@@ -67,8 +75,8 @@ namespace CO453_ConsoleApp
             Console.SetWindowSize(100, 36);
             Console.SetBufferSize(100, 36);
 
-            Console.BackgroundColor = ConsoleColor.Red;
-            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            Console.ForegroundColor = ConsoleColor.Yellow;
 
             Console.Clear();  // clear screen in chosen colour
         }
@@ -80,8 +88,11 @@ namespace CO453_ConsoleApp
         /// </summary>
         private void Start()
         {
-            Console.WriteLine("\tPlay the Scissors Paper Stone Game");
-            Console.WriteLine("\t==================================");
+            Console.WriteLine("==================================");
+            Console.WriteLine("Play the Scissors Paper Stone Game");
+            Console.WriteLine("==================================");
+            
+            //playerName = UserLib.GetString("Please enter your name > ");
         }
 
         /// <summary>
@@ -96,6 +107,8 @@ namespace CO453_ConsoleApp
 
             playerChoice = Console.ReadLine();
             playerChoice = playerChoice.ToUpper();
+
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -105,15 +118,19 @@ namespace CO453_ConsoleApp
         /// </summary>
         private void GetComputerChoice()
         {
-            int num;
-            num = randomGenerator.Next(3);  // pick a random number (0, 1 or 2)
-            if (num == 0)
+            int choice;
+            choice = randomGenerator.Next(3);  // pick a random number (0, 1 or 2)
+            if (choice == 0)
             {
                 computerChoice = SCISSORS;
             }
-            else
+            else if(choice == 1)
             {
-                computerChoice = "NOT YET DETERMINED";
+                computerChoice = PAPER;
+            }
+            else if(choice == 2)
+            {
+                computerChoice = STONE;
             }
         }
 
@@ -150,19 +167,33 @@ namespace CO453_ConsoleApp
         /// 
         /// *******************************************************
         /// </summary>
-        private void DrawPlayerChoice()
+        private void DrawChoice(Players player)
         {
-            if (playerChoice == SCISSORS)
+            string choice;
+            int x;
+
+            if (player == Players.COMPUTER)
             {
-                DrawScissors(10, 5);
+                x = 50;
+                choice = computerChoice;
             }
-            else if (playerChoice == PAPER)
+            else
             {
-                DrawPaper(10, 5);
+                choice = playerChoice;
+                x = 5;
             }
-            else if (playerChoice == STONE)
+
+            if (choice == SCISSORS)
             {
-                DrawStone(10, 5);
+                DrawScissors(x, 7);
+            }
+            else if (choice == PAPER)
+            {
+                DrawPaper(x, 7);
+            }
+            else if (choice == STONE)
+            {
+                DrawStone(x, 7);
             }
         }
 
