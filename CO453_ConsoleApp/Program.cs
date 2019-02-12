@@ -1,5 +1,7 @@
 using System;
 using CO453_ConsoleApp.Unit4;
+using CO453_ConsoleApp.SPS;
+
 namespace CO453_ConsoleApp
 {
     /// <summary>
@@ -12,13 +14,8 @@ namespace CO453_ConsoleApp
     {
         static void Main(string[] args)
         {
-
-            //TestBook.Test();
-            TestDistanceConverter.TestChoices();
-
+            GameInterface.RunGame();
             Console.ReadKey();
-
-            // Go to http://aka.ms/dotnet-get-started-console to continue learning how to build a console app! 
         }
 
         public void Archive()
@@ -26,6 +23,9 @@ namespace CO453_ConsoleApp
             // Task 4.1
             //TestDistanceConverter.TestMilesToFeet();
             //TestDistanceConverter.TestFeetToMiles();
+
+            //TestBook.Test();
+            //TestDistanceConverter.TestChoices();
         }
     }
 }
