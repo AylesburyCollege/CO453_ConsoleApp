@@ -25,10 +25,9 @@ namespace CO453_ConsoleApp
         public static string Winner { get; set; }
 
         public static int PlayerScore { get; set; }
-
         public static int ComputerScore { get; set; }
 
-        private static Random randomGenerator;
+        private static Random randomGenerator = new Random();
 
         //static void Main()
         //{
@@ -36,16 +35,6 @@ namespace CO453_ConsoleApp
 
         //    myGame.Play();             // call its play method
         //}
-
-        /// <summary>
-        /// *******************************************************
-        /// Create a new random number generator object
-        /// *******************************************************
-        /// </summary>
-        public Game()
-        {
-            randomGenerator = new Random(); 
-        }
 
         /// <summary>
         /// *******************************************************
@@ -102,7 +91,7 @@ namespace CO453_ConsoleApp
         /// 
         /// *******************************************************
         /// </summary>
-        private void WorkoutWinner()
+        public static void WorkoutWinner()
         {
             if (PlayerChoice == ComputerChoice)
             {
@@ -123,42 +112,5 @@ namespace CO453_ConsoleApp
                 PlayerScore++;
             }
         }
-
-        /// <summary>
-        /// *******************************************************
-        /// 
-        /// *******************************************************
-        /// </summary>
-        private void DrawChoice(Players player)
-        {
-            string choice;
-            int x;
-
-            if (player == Players.COMPUTER)
-            {
-                x = 50;
-                choice = ComputerChoice;
-            }
-            else
-            {
-                choice = PlayerChoice;
-                x = 5;
-            }
-
-            if (choice == SCISSORS)
-            {
-                Images.DrawScissors(x, 7);
-            }
-            else if (choice == PAPER)
-            {
-                Images.DrawPaper(x, 7);
-            }
-            else if (choice == STONE)
-            {
-                Images.DrawStone(x, 7);
-            }
-        }
-
-
     }
 }
