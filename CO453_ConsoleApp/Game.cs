@@ -20,6 +20,8 @@ namespace CO453_ConsoleApp
         public const string STONE = "STONE";
         public const string PAPER = "PAPER";
 
+        public static string PlayerName { get; set; }
+        public static string ComputerName { get; set; }
         public static string ComputerChoice { get; set; }
         public static string PlayerChoice { get; set; }
         public static string Winner { get; set; }
@@ -45,6 +47,9 @@ namespace CO453_ConsoleApp
         {
             PlayerScore = 0;
             ComputerScore = 0;
+
+            PlayerName = "Derek";
+            ComputerName = "Computer";
         }
 
         /// <summary>
@@ -55,11 +60,11 @@ namespace CO453_ConsoleApp
         public static void End()
         {
             if (PlayerScore > ComputerScore)
-                Winner = "Player";
+                Winner = PlayerName;
             else if (PlayerScore < ComputerScore)
-                Winner = "Computer";
+                Winner = ComputerName;
             else
-                Winner = "Draw";
+                Winner = "No Winner";
         }
 
         /// <summary>
@@ -96,20 +101,20 @@ namespace CO453_ConsoleApp
         {
             if (PlayerChoice == ComputerChoice)
             {
-                Winner = "DRAW";
+                Winner = "No Winner";
             }
             else if ((PlayerChoice == STONE && ComputerChoice == PAPER) ||
                     (PlayerChoice == SCISSORS && ComputerChoice == STONE) ||
                     (PlayerChoice == PAPER && ComputerChoice == SCISSORS))
             {
-                Winner = "Computer";
+                Winner = ComputerName;
                 ComputerScore++;
             }
             else if ((PlayerChoice == STONE && ComputerChoice == SCISSORS) ||
                     (PlayerChoice == SCISSORS && ComputerChoice == PAPER) ||
                     (PlayerChoice == PAPER && ComputerChoice == STONE))
             {
-                Winner = "Player";
+                Winner = PlayerName;
                 PlayerScore++;
             }
         }

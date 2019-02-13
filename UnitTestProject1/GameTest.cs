@@ -36,7 +36,7 @@ namespace UnitTestProject
             Game.ComputerChoice = Game.STONE;
             Game.WorkoutWinner();
            
-            Assert.AreEqual(Game.Winner, "Player");
+            Assert.AreEqual(Game.Winner, Game.PlayerName);
         }
 
         [TestMethod]
