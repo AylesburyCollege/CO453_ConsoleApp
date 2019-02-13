@@ -50,7 +50,7 @@
   <ItemGroup>
     <Compile Include="TestDistanceConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="GameTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

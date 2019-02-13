@@ -14,7 +14,7 @@ namespace CO453_ConsoleApp
     /// Author: 
     /// Started: 12/02/2019
     /// </summary>
-    class Game
+    public class Game
     {
         public const string SCISSORS = "SCISSORS";
         public const string STONE = "STONE";
@@ -70,7 +70,8 @@ namespace CO453_ConsoleApp
         public static void GetComputerChoice()
         {
             int choice;
-            choice = randomGenerator.Next(3);  // pick a random number (0, 1 or 2)
+            choice = randomGenerator.Next(3);  
+
             if (choice == 0)
             {
                 ComputerChoice = SCISSORS;
